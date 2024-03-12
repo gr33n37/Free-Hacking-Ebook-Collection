@@ -2,8 +2,6 @@
 
 * [Introduction](README.md)
   * [BLOG](https://gr33n37.blogspot.com)
-* [Page](page/README.md)
-  * [Page 8](page/page-8.md)
 
 ## Proving-grounds
 
@@ -13,10 +11,6 @@
 * [SoSimple](proving-grounds/sosimple.md)
 * [Stapler](proving-grounds/stapler.md)
 * [Loly](proving-grounds/loly.md)
-* [Page 1](proving-grounds/page-1.md)
-* [Page 2](proving-grounds/page-2/README.md)
-  * [Page 3](proving-grounds/page-2/page-3.md)
-  * [Page 7](proving-grounds/page-2/page-7.md)
 
 ## HTB
 

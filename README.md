@@ -31,6 +31,8 @@ I believe their is **nothing hard is life if you are committed to it**, waking u
 
 I will try and keep this as accurate as possible, with some examples of how the technique works. Nothing advanced this is just the basics and hopefully, well in the future it will help some to understand what "Key Words" or areas to search for when trying to find more sophisticated articles.
 
+{% embed url="https://youtube.com/@gr33n37" %}
+
 <pre class="language-markdown"><code class="lang-markdown"><strong>Social media handles
 </strong><strong>1. twitter : @gr33n37
 </strong><strong>2. github  : gr33n37
