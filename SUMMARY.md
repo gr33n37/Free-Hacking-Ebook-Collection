@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+  * [BLOG](https://gr33n37.blogspot.com)
 * [Page](page/README.md)
   * [Page 8](page/page-8.md)
 
