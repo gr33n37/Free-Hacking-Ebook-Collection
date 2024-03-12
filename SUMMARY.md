@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
   * [BLOG](https://gr33n37.blogspot.com)
+  * [YOUTUBE](https://youtube.com/@gr33n37)
 
 ## Proving-grounds
 
