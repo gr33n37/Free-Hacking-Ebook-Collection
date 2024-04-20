@@ -34,4 +34,5 @@
 
 ## Red team
 
-* [Page 6](red-team/page-6.md)
+* [UAC Bypass](red-team/uac-bypass/README.md)
+  * [UAC Bypass with metasploit](red-team/uac-bypass/uac-bypass-with-metasploit.md)
