@@ -12,6 +12,7 @@
 * [SoSimple](proving-grounds/sosimple.md)
 * [Stapler](proving-grounds/stapler.md)
 * [Loly](proving-grounds/loly.md)
+* [vegeta1](proving-grounds/vegeta1.md)
 
 ## HTB
 
