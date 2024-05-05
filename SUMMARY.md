@@ -13,6 +13,7 @@
 * [Stapler](proving-grounds/stapler.md)
 * [Loly](proving-grounds/loly.md)
 * [vegeta1](proving-grounds/vegeta1.md)
+* [BBCute](proving-grounds/bbcute.md)
 
 ## HTB
 
