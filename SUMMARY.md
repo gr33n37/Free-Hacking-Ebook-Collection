@@ -18,13 +18,15 @@
 
 ## HTB
 
-* [Broker](htb/broker.md)
-* [keeper](htb/keeper.md)
+* [Linux](htb/linux/README.md)
+  * [Broker](htb/linux/broker.md)
+  * [keeper](htb/linux/keeper.md)
 
 ## Tryhackme
 
-* [Dreaming](tryhackme/dreaming.md)
-* [Wonderland](tryhackme/wonderland.md)
+* [Linux](tryhackme/linux/README.md)
+  * [Dreaming](tryhackme/linux/dreaming.md)
+  * [Wonderland](tryhackme/linux/wonderland.md)
 
 ## Blue team labs
 
