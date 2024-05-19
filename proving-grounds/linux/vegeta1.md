@@ -30,7 +30,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ### port 80 enumeration
 
-<figure><img src="../.gitbook/assets/port80.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/port80.png" alt=""><figcaption></figcaption></figure>
 
 On using <mark style="color:yellow;">**dirsearch**</mark> we find the following folder present
 
@@ -55,11 +55,11 @@ http://192.168.188.73/server-status
 
 When we check the the <mark style="color:yellow;">robots.txt</mark> we see the content below
 
-<figure><img src="../.gitbook/assets/robots.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/robots.png" alt=""><figcaption></figcaption></figure>
 
 When you open the <mark style="color:yellow;">find\_me.html</mark> file it takes us to the site.
 
-<figure><img src="../.gitbook/assets/f2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/f2.png" alt=""><figcaption></figcaption></figure>
 
 i decided to check it source code, where at the bottom i saw a <mark style="color:yellow;">base64</mark> hashed value and decided to decode it.
 
@@ -67,19 +67,19 @@ i decided to check it source code, where at the bottom i saw a <mark style="colo
 echo "hashed-value" | base4 -d
 ```
 
-<figure><img src="../.gitbook/assets/first-scan.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/first-scan.png" alt=""><figcaption></figcaption></figure>
 
 On decoding we get a second hash which is i thought what if i also decode it again
 
-<figure><img src="../.gitbook/assets/second-scan.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/second-scan.png" alt=""><figcaption></figcaption></figure>
 
 Decoding the second hash gives has a binary which start with <mark style="color:yellow;">PNG</mark> assuming this could be a png file. i saved this hash in a png.txt file and went to [convert.io](https://convertio.co) and uploaded the png.txt and it returned a QR code.
 
-<figure><img src="../.gitbook/assets/png.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/png.png" alt=""><figcaption></figcaption></figure>
 
 using <mark style="color:yellow;">cyberchef</mark> to see what data is inside the QRcode we see that it has a password <mark style="color:yellow;">topshellv</mark> .
 
-<figure><img src="../.gitbook/assets/png2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/png2.png" alt=""><figcaption></figcaption></figure>
 
 After all the information gathered i was just in the rabbit hole so i decided to do the post 80 enumeration again with other tools.
 
@@ -87,11 +87,11 @@ _Nkito_&#x20;
 
 With nikto i received the same files us before
 
-<figure><img src="../.gitbook/assets/nkito.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/nkito.png" alt=""><figcaption></figcaption></figure>
 
 I decided to use gobuster with a common wordlist, and this is where i used chatGPT to generate it for me.
 
-<figure><img src="../.gitbook/assets/chat.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chat.png" alt=""><figcaption></figcaption></figure>
 
 Gobuster
 
@@ -101,11 +101,11 @@ gobuster dir -u http://192.168.250.73 -w wordlist.txt -x .html,.txt,.php,.sh,.as
 
 we found another path <mark style="color:yellow;">/bulma</mark> which we didn't see before,&#x20;
 
-<figure><img src="../.gitbook/assets/bul1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/bul1.png" alt=""><figcaption></figcaption></figure>
 
 We see that in this path we have a audio file <mark style="color:yellow;">hahahaha.wav</mark> and on downloading and playing it sounds to be like a <mark style="color:yellow;">Morse code</mark> . checking online i came across this [site](https://morsecode.world/international/decoder/audio-decoder-adaptive.html) which can decode the message for me and we see that we found a user and password.
 
-<figure><img src="../.gitbook/assets/morsecode.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/morsecode.png" alt=""><figcaption></figcaption></figure>
 
 ```
 USER : TRUNKS PASSWORD : U$3R
@@ -117,11 +117,11 @@ USER : TRUNKS PASSWORD : U$3R
 ssh trunk@192.168.250.73
 ```
 
-<figure><img src="../.gitbook/assets/ssh1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ssh1.png" alt=""><figcaption></figcaption></figure>
 
 Typing in our password <mark style="color:yellow;">U$3R</mark> it fails to login so i decided to try typing it in lowercase and see if it will work and it was successful.
 
-<figure><img src="../.gitbook/assets/ssh2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ssh2.png" alt=""><figcaption></figcaption></figure>
 
 Listing all the directory contents(ls -al) we get our first flag in local.txt
 

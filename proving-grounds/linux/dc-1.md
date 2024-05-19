@@ -64,11 +64,11 @@ rpcinfo -p 192.168.242.193
 
 #### http (port 80)
 
-<figure><img src="../.gitbook/assets/rt (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/rt (1).png" alt=""><figcaption></figcaption></figure>
 
 checking the robots.txt file
 
-<figure><img src="../.gitbook/assets/cd.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/cd.png" alt=""><figcaption></figcaption></figure>
 
 a full list of files is below
 
@@ -145,7 +145,7 @@ feroxbuster -u http://192.168.240.193 -x html,php,txt
 
 since we know that site its using **Drupal 7** from our nmap or when you check the source code, lets search for its exploits
 
-<figure><img src="../.gitbook/assets/dp.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dp.png" alt=""><figcaption></figcaption></figure>
 
 #### checking for exploits with msfconsole
 
@@ -153,7 +153,7 @@ since we know that site its using **Drupal 7** from our nmap or when you check t
 search Drupal 7
 ```
 
-<figure><img src="../.gitbook/assets/dc12.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dc12.png" alt=""><figcaption></figcaption></figure>
 
 Now i tried on the first exploits, they didn't work then i tried the second exploit and it worked for me well
 
@@ -162,11 +162,11 @@ Now i tried on the first exploits, they didn't work then i tried the second expl
 2. show options
 ```
 
-<figure><img src="../.gitbook/assets/dc13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dc13.png" alt=""><figcaption></figcaption></figure>
 
 Now you have to set the **RHOSTS** to our target machine , we set the **LHOST** which our attack machine and the **LPORT** which is our listening port, since our website is running direct on port 80 which is our root, we don't need to change the **TARGETURI**
 
-<figure><img src="../.gitbook/assets/DC14.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/DC14.png" alt=""><figcaption></figcaption></figure>
 
 Now our payload is delivered successfully and the meterpreter is started, with just a **shell** command we get access to our machine terminal. After getting access to our machine i had to check if it has python installed so that is elevate to a unrestricted shell.
 
@@ -175,7 +175,7 @@ Now our payload is delivered successfully and the meterpreter is started, with j
 2. python 'import pty;pty.spwan("/bin/bash")'
 ```
 
-<figure><img src="../.gitbook/assets/dc15.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dc15.png" alt=""><figcaption></figcaption></figure>
 
 we find our first flag when we enter in out **/home** directory
 
@@ -197,7 +197,7 @@ After finding our first flag we have have to see how we can elevate our privileg
 find / -user root -perm /4000 2>/dev/null
 ```
 
-<figure><img src="../.gitbook/assets/dc16.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dc16.png" alt=""><figcaption></figcaption></figure>
 
 in the list give i happen to see find and to check it on **GTFOBins** i found a shell command that can give me the root shell [find-GTFOBin](https://gtfobins.github.io/gtfobins/find/#shell)
 
@@ -207,7 +207,7 @@ find . -exec /bin/sh \; -quit
 
 After getting acces to a root machine we find the final flag in the **/root** path
 
-<figure><img src="../.gitbook/assets/dc17.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dc17.png" alt=""><figcaption></figcaption></figure>
 
 ```markdown
 1. cat proof.txt
