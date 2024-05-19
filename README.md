@@ -1,8 +1,6 @@
 ---
 description: RedTeam, blue-team, HackTheBox, Tryhackme, webapp-pentest
-cover: >-
-  .gitbook/assets/Green and Black Maximalist Action  Adventure YouTube
-  Banner.png
+cover: .gitbook/assets/Green and Black Maximalist Action Adventure YouTube Banner.png
 coverY: 0
 layout:
   cover:
