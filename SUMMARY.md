@@ -40,3 +40,4 @@
 
 * [UAC Bypass](red-team/uac-bypass/README.md)
   * [UAC Bypass with metasploit](red-team/uac-bypass/uac-bypass-with-metasploit.md)
+  * [FodHelper](red-team/uac-bypass/fodhelper.md)
