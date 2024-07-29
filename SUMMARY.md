@@ -54,5 +54,6 @@
 ***
 
 * [Metasploit-3](metasploit-3/README.md)
-  * [Linux](metasploit-3/linux.md)
+  * [Linux](metasploit-3/linux/README.md)
+    * [FTP ENUMERATION](metasploit-3/linux/ftp-enumeration.md)
   * [windows](metasploit-3/windows.md)
