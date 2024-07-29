@@ -27,6 +27,9 @@
 * [Linux](tryhackme/linux/README.md)
   * [Dreaming](tryhackme/linux/dreaming.md)
   * [Wonderland](tryhackme/linux/wonderland.md)
+  * [Blog](tryhackme/linux/blog.md)
+  * [Blue](tryhackme/linux/blue.md)
+  * [Kenobi](tryhackme/linux/kenobi.md)
 
 ## Blue team labs
 
@@ -41,3 +44,15 @@
 * [UAC Bypass](red-team/uac-bypass/README.md)
   * [UAC Bypass with metasploit](red-team/uac-bypass/uac-bypass-with-metasploit.md)
   * [FodHelper](red-team/uac-bypass/fodhelper.md)
+* [HAVOC C2](red-team/havoc-c2.md)
+
+## METASPLOIT MACHINES
+
+* [Metasploit-2](metasploit-machines/metasploit-2/README.md)
+  * [linux](metasploit-machines/metasploit-2/linux.md)
+
+***
+
+* [Metasploit-3](metasploit-3/README.md)
+  * [Linux](metasploit-3/linux.md)
+  * [windows](metasploit-3/windows.md)
