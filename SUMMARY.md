@@ -49,7 +49,8 @@
 ## METASPLOIT MACHINES
 
 * [Metasploit-2](metasploit-machines/metasploit-2/README.md)
-  * [linux](metasploit-machines/metasploit-2/linux.md)
+  * [linux](metasploit-machines/metasploit-2/linux/README.md)
+    * [FTP](metasploit-machines/metasploit-2/linux/ftp.md)
 
 ***
 
